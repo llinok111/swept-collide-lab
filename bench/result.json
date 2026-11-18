@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-18",
+  "node": "v24.19.0",
+  "scene": {
+    "triangles": 228,
+    "vertices": 152,
+    "moves": 64,
+    "radius": 0.35
+  },
+  "bvh": {
+    "buildMs": 2.867,
+    "nodes": 63,
+    "leaves": 32,
+    "maxDepth": 5
+  },
+  "cold": {
+    "ms": 24.968,
+    "hits": 33
+  },
+  "samples": {
+    "reps": 25,
+    "count": 7,
+    "ms": [
+      4.68,
+      2.808,
+      2.73,
+      2.737,
+      2.699,
+      2.727,
+      2.777
+    ]
+  },
+  "median": 2.737,
+  "min": 2.699,
+  "p95": 4.68,
+  "stddev": 0.678,
+  "rsdPct": 22.42,
+  "brute": {
+    "median": 5.716,
+    "samples": [
+      7.565,
+      5.622,
+      5.716,
+      5.713,
+      6.058
+    ]
+  },
+  "speedupVsBrute": 2.09,
+  "triTests": {
+    "bvh": 3549,
+    "brute": 14592,
+    "ratioPct": 24.3
+  },
+  "hits": 33,
+  "sweepFingerprint": "f0cd1584"
+}

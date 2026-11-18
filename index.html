@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>swept-collide-lab — exact swept-sphere TOI</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0b0e14; color: #dfe6f3; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  #view { position: fixed; inset: 0; }
+  #hud {
+    position: fixed; top: 14px; left: 14px; width: 330px; padding: 12px 14px;
+    background: rgba(12, 17, 26, .82); border: 1px solid #253044; border-radius: 10px;
+    backdrop-filter: blur(6px); white-space: pre-wrap;
+  }
+  #hud h1 { margin: 0 0 6px; font-size: 14px; letter-spacing: .02em; color: #7ee0c0; }
+  .row { display: flex; justify-content: space-between; gap: 10px; }
+  .k { color: #7f8ea8; }
+  .v { color: #e8f0ff; }
+  .hit { color: #ff8a7a; } .ok { color: #7ee0c0; } .warn { color: #ffc86b; }
+  #controls { position: fixed; bottom: 14px; left: 14px; right: 14px; display: flex; gap: 14px; align-items: center;
+    padding: 10px 14px; background: rgba(12,17,26,.82); border: 1px solid #253044; border-radius: 10px; flex-wrap: wrap; }
+  #controls label { color: #9fb0c9; }
+  input[type=range] { width: 220px; accent-color: #7ee0c0; }
+  button { background: #17202f; color: #dfe6f3; border: 1px solid #33415c; border-radius: 7px; padding: 6px 12px; cursor: pointer; font: inherit; }
+  button:hover { border-color: #7ee0c0; }
+  #crosshair { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px; background: #7ee0c0; border-radius: 50%; opacity: .35; }
+  #note { position: fixed; top: 14px; right: 14px; max-width: 300px; color: #7f8ea8; text-align: right; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="view"></div>
+<div id="crosshair"></div>
+<div id="hud"><h1>swept-collide-lab</h1><div id="stats"></div></div>
+<div id="note">click to capture mouse · WASD move · Shift sprint<br />C toggles exact CCD ↔ 16-substep discrete</div>
+<div id="controls">
+  <label>speed <input id="speed" type="range" min="2" max="900" value="6" step="1" /></label>
+  <span id="speedVal" class="v">6 m/s</span>
+  <button id="mode">mode: exact CCD</button>
+  <button id="reset">reset position</button>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
